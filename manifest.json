@@ -1,0 +1,16 @@
+{
+  "name": "Dan-Sin Retro Experience",
+  "short_name": "Dan-Sin",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#222222",
+  "theme_color": "#713a6e",
+  "description": "An interactive retro web experience.",
+  "icons": [
+    {
+      "src": "https://img.magnific.com/free-vector/hand-drawn-kitsune-mask-illustration_23-2149367767.jpg?semt=ais_hybrid&w=740&q=80",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
