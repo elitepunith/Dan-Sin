@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap');
+
+body {
+
+    background-color: #222;
+    animation: none;
+
+}
+
+.colored-background {
+
+  animation: colored-background linear 12s infinite;
+
+}
+
+@keyframes colored-background {  
+
+  0% { background-color: #713a6e; }
+  20% { background-color: rgb(62, 60, 169); }
+  40% { background-color: rgb(77, 165, 74); }
+  60% { background-color: rgb(194, 170, 65); }
+  80% { background-color: rgb(207, 63, 58); }
+  100% { background-color: #bc3eb5; }
+
+}
+
+
+@keyframes transition-in {
+
+  0% {
+
+    transform: scale(0.3);
+    opacity: 0; 
+  }
+
+  100% {
+
+    transform: scale(1);
+    opacity: 0.7;
+
+  }
+
+}
+
+
+@keyframes textflicker {
+
+
+  from {
+
+    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+
+  }
+  to {
+
+    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+
+  }
+}
+
+
+
+.container {
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+.vcr-overlay {
+
+  background: url('assets/static.gif');
+  background-size: cover;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+
+}
+
+.begin {
+
+  font-size: 2em;
+
+ font-family: "Geist Pixel", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "ELSH" 0;
+
+  font-weight: bolder;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+
+}
+
+.glitch {
+
+  position: relative;
+  display: inline-block;
+
+}
+
+.glitch::before,
+.glitch::after {
+
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+
+}
+
+
+.glitch::before {
+
+  left: 2px;
+  text-shadow: -2px 0 #ea36af;
+  animation: glitch-anim-1 1s infinite linear alternate-reverse;
+
+}
+
+.glitch::after {
+
+  left: -2px;
+  text-shadow: -2px 0 #75fa69;
+  animation: glitch-anim-2 1s infinite linear alternate-reverse;
+
+}
+
+
+
+@keyframes glitch-anim-1 {
+
+  0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
+  20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
+  40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
+  60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
+  80% { clip-path: inset(10% 0 70% 0); transform: translate(-2px, 1px); }
+  100% { clip-path: inset(30% 0 50% 0); transform: translate(2px, -1px); }
+}
+
+
+@keyframes glitch-anim-2 {
+
+  0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); }
+  20% { clip-path: inset(30% 0 20% 0); transform: translate(-2px, 1px); }
+  40% { clip-path: inset(70% 0 10% 0); transform: translate(2px, 2px); }
+  60% { clip-path: inset(20% 0 50% 0); transform: translate(-2px, -2px); }
+  80% { clip-path: inset(50% 0 30% 0); transform: translate(2px, 1px); }
+  100% { clip-path: inset(5% 0 80% 0); transform: translate(-2px, -1px); }
+}
+
+
+.flicker-text {
+
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+}
+
+
+.phrase-box {
+  font-family: 'VT323', monospace;
+  color: white;
+  font-weight: bold;
+}
+
+
+@media (max-width: 300px) {
+  .phrase-box { font-size: 1em; }
+}
+
+@media (min-width: 500px) {
+  .phrase-box { font-size: 2em; }
+}
+
+@media (min-width: 700px) {
+  .phrase-box { font-size: 3em; }
+}
+
+img {
+
+  width: 50%;
+  animation: transition-in ease-in-out 3s;
+  cursor: pointer;
+
+}
