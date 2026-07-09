@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewpoint" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dan-Sin</title>
-        <link rel="icon" href="https://img.magnific.com/free-vector/hand-drawn-kitsune-mask-illustration_23-2149367767.jpg?semt=ais_hybrid&w=740&q=80" type="img/png">
-
+        <link rel="icon" href="https://img.magnific.com/free-vector/hand-drawn-kitsune-mask-illustration_23-2149367767.jpg?semt=ais_hybrid&w=740&q=80" type="image/png">
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#713a6e">
         <link rel="stylesheet" href="style.css">
-
-
     </head>
-
     <body>
-
         <div class="container">
-        <button class=" begin glitch" data-text="Begin (with 🔊 )">Begin (with 🔊)</button>
-
+            <button class="begin glitch" data-text="Begin (with 🔊 )">Begin (with 🔊)</button>
         </div>
-
- <div class="vcr-overlay"></div>
- 
-  <script src="script.js"></script>
-
- 
+        <div class="vcr-overlay"></div>
+        <script src="script.js"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('sw.js')
+                        .then(reg => console.log('SW registered'))
+                        .catch(err => console.error('SW failed:', err));
+                });
+            }
+        </script>
     </body>
 </html>
